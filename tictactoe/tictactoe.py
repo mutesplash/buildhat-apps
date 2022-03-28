@@ -186,7 +186,7 @@ def explode(color, frame_delay=0.025):
 		matrix_a.set_pixels(matrix)
 		time.sleep(frame_delay)
 
-def	play_tie_animation(color="red", frame_delay=0.08):
+def play_tie_animation(color="red", frame_delay=0.08):
 	global matrix_a
 
 	matrix_a.clear()
