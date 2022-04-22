@@ -186,7 +186,7 @@ def explode(color, frame_delay=0.025):
 		matrix_a.set_pixels(matrix)
 		time.sleep(frame_delay)
 
-def play_tie_animation(color="red", frame_delay=0.08):
+def play_tie_explosion(color="red", frame_delay=0.08):
 	global matrix_a
 
 	matrix_a.clear()
@@ -201,6 +201,24 @@ def play_tie_animation(color="red", frame_delay=0.08):
 			[(color,corner_sequence[x]),(color,cross_sequence[x]),(color,corner_sequence[x])],
 			[(color,cross_sequence[x]),(color,center_sequence[x]),(color,cross_sequence[x])],
 			[(color,corner_sequence[x]),(color,cross_sequence[x]),(color,corner_sequence[x])]
+		]
+		matrix_a.set_pixels(matrix)
+		time.sleep(frame_delay)
+
+def play_tie_animation(color="red", frame_delay=0.08):
+	global matrix_a
+
+	matrix_a.clear()
+	time.sleep(frame_delay)
+
+	x_sequence     = [2,4,6,8,10,10,10,10,9,8,7,6,5,4,3,2,1,0]
+	glow_sequence =  [0,0,0,0, 0, 0, 1, 2,3,4,3,2,1,0,0,0,0,0]
+
+	for x in range(len(x_sequence)):
+		matrix = [
+			[(color,x_sequence[x]),(color,glow_sequence[x]),(color,x_sequence[x])],
+			[(color,glow_sequence[x]),(color,x_sequence[x]),(color,glow_sequence[x])],
+			[(color,x_sequence[x]),(color,glow_sequence[x]),(color,x_sequence[x])]
 		]
 		matrix_a.set_pixels(matrix)
 		time.sleep(frame_delay)
